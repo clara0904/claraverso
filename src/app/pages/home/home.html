@@ -1,0 +1,34 @@
+<div class="container">
+
+    <section *ngIf="livros.length">
+    <h2>Livros</h2>
+    <div class="grid">
+      <app-resenha-card
+        *ngFor="let r of livros"
+        [resenha]="r">
+      </app-resenha-card>
+    </div>
+  </section>
+
+  <section *ngIf="filmes.length">
+    <h2>Filmes</h2>
+    <div class="grid">
+      <app-resenha-card
+        *ngFor="let r of filmes"
+        [resenha]="r">
+      </app-resenha-card>
+    </div>
+  </section>
+
+
+  <section *ngIf="series.length">
+    <h2>Séries</h2>
+    <div class="grid">
+      <app-resenha-card
+        *ngFor="let r of series"
+        [resenha]="r">
+      </app-resenha-card>
+    </div>
+  </section>
+
+</div>
