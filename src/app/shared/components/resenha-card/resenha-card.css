@@ -1,0 +1,86 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: #f4f4f4;
+}
+
+
+.card h3 {
+  font-size: 18px;
+  margin: 15px;
+  color: #2C3E50;
+}
+
+.card p {
+  margin: 0 15px 10px 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.card p:last-child {
+  margin-bottom: 15px;
+}
+
+.preview {
+  margin: 0 15px 15px 15px;
+  font-size: 14px;
+  color: #555;
+
+  display: -webkit-box;
+  display: box;
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+
+  overflow: hidden;
+}
+
+.estrelas {
+  margin-bottom: 10px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.estrelas span {
+  color: #F06292; 
+  margin-right: 3px;
+}
+
+.estrelas .vazia {
+  color: #ddd;
+}
+
+.tag-genero {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #3498DB;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+}

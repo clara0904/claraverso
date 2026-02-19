@@ -1,0 +1,30 @@
+<div class="card">
+  <img [src]="resenha.imagem" alt="imagem">
+
+  <div class="card-content">
+
+    <div class="tag-genero">
+      {{ resenha.genero }}
+    </div>
+
+    <h3>
+        {{ resenha.titulo }}
+    </h3>
+
+    <div class="estrelas">
+        <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
+
+        <!-- Meia estrela -->
+        <span *ngIf="temMeiaEstrela">⯪</span>
+
+        <!-- Estrelas vazias -->
+        <span class="vazia"
+                *ngFor="let _ of [].constructor(estrelasVazias)">
+            ★
+        </span>
+    </div>
+
+    <p class="preview">{{ resenha.resenha }}</p>
+
+  </div>
+</div>
