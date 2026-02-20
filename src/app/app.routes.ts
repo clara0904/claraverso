@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home';
+import { Explorar } from './shared/components/explorar/explorar';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  {
+  path: 'explorar',
+    component: Explorar
+  }
 ];
