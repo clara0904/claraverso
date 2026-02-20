@@ -47,15 +47,36 @@ export class ResenhasService {
       resenha: 'Gostei bastante, é um tipo de clichê que já fazia tempo que eu não lia. Thea e Gavin são uns fofos, é extremamente compreensível o lado dos dois e foi muito bonito ver eles superando tudo.',
       imagem: 'imagens/clubedoslivrosdoshomens.jpg'
     },
-    /*{
+    {
       id: 5,
       titulo: 'Reckless',
       tipo: 'livro',
+      genero: 'Fantasia',
       nota: 5,
       descricao: '',
       resenha: 'Uma palavra pra esse livro: aflição. Amei demais esse livro. Amei o entendimento entre a Paedyn e o Kai, que apesar de tudo enxergaram a verdade e escolheram um ao outro, mesmo com suas controvérsias. Li esse livro super rápido, tava tão ansiosa pra saber o fim. E agora estou ansiosa pra ler Fearless. Me apeguei muito a esse universo e esses personagens.',
       imagem: 'imagens/reckless.jpg'
-    }*/
+    },
+    {
+      id: 6,
+      titulo: 'Meninas Malvadas',
+      tipo: 'filme',
+      nota: 5,
+      genero: 'Comédia',
+      descricao: '',
+      resenha: 'Meu filme conforto, posso ver mil vezes e não canso.',
+      imagem: 'imagens/meninasmalvadas.jpg'
+    },
+    {
+      id: 8,
+      titulo: 'Stranger Things',
+      tipo: 'serie',
+      nota: 4.7,
+      genero: 'Terror',
+      descricao: '',
+      resenha: 'Ver essas criancinhas crescendo é demais pra mim. Amo Hawkinssss!',
+      imagem: 'imagens/strangerthings.jpg'
+    },
   ];
 
   getResenhas(): Resenha[] {
