@@ -10,5 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './menu.css',
 })
 export class Menu {
+  menuAberto = false;
 
+  toggleMenu() {
+    this.menuAberto = !this.menuAberto;
+  }
 }
