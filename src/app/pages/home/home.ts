@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ResenhasService } from '../../services/resenhas';
 import { Resenha } from '../../models/resenha.model';
 import { ResenhaCardComponent } from '../../shared/components/resenha-card/resenha-card';
+import { Menu } from "../../shared/components/menu/menu";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ResenhaCardComponent],
+  imports: [CommonModule, ResenhaCardComponent, Menu],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
