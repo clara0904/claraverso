@@ -1,0 +1,33 @@
+<app-navbar-explorar></app-navbar-explorar>
+<div class="container">
+  <section>
+
+    <!-- Linha superior -->
+    <div class="topo-explorar">
+      <h2>Explorar o ClaraVerso</h2>
+
+      <input 
+        type="text"
+        placeholder="Pesquisar resenha..."
+        [(ngModel)]="busca"
+      />
+    </div>
+
+    <!-- Botões abaixo -->
+    <div class="botoes">
+      <button (click)="selecionarTipo(null)">Todos</button>
+      <button (click)="selecionarTipo('livro')">Livros</button>
+      <button (click)="selecionarTipo('filme')">Filmes</button>
+      <button (click)="selecionarTipo('serie')">Séries</button>
+    </div>
+
+    <!-- Grid igual Home -->
+    <div class="grid">
+      <app-resenha-card
+        *ngFor="let resenha of resenhasFiltradas"
+        [resenha]="resenha">
+      </app-resenha-card>
+    </div>
+
+  </section>
+</div>
