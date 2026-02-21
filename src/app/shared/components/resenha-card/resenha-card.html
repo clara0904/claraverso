@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="['/resenha', resenha.id]">
   <img [src]="resenha.imagem" alt="imagem">
 
   <div class="card-content">
@@ -13,11 +13,7 @@
 
     <div class="estrelas">
         <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
-
-        <!-- Meia estrela -->
         <span *ngIf="temMeiaEstrela">⯪</span>
-
-        <!-- Estrelas vazias -->
         <span class="vazia"
                 *ngFor="let _ of [].constructor(estrelasVazias)">
             ★

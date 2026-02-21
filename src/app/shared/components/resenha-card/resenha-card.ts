@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Resenha } from '../../../models/resenha.model';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-resenha-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './resenha-card.html',
   styleUrls: ['./resenha-card.css']
 })
