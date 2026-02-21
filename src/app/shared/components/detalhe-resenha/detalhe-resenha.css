@@ -1,0 +1,72 @@
+.detalhe-container {
+  display: flex;
+  height: 100vh;
+}
+
+
+.capa {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.capa img {
+  width: 75%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.conteudo {
+  width: 70%;
+  padding: 60px;
+  overflow-y: auto;
+}
+
+.titulo {
+  font-size: 2.3rem;
+  color: #2C3E50; 
+  margin-bottom: 10px;
+}
+
+.tipo {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.genero {
+  color: #3498DB;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.estrelas {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #F06292;
+}
+
+.estrelas .vazia {
+  color: #ccc;
+}
+
+.sinopse,
+.resenha-texto {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #2C3E50;
+}

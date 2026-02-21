@@ -1,0 +1,43 @@
+<app-navbar-explorar></app-navbar-explorar>
+<div class="detalhe-container">
+
+  <div class="capa">
+    <img [src]="resenha?.imagem" alt="capa">
+  </div>
+
+  <div class="conteudo">
+
+    <h1 class="titulo">
+      {{ resenha?.titulo }}
+    </h1>
+
+    <div class="tipo">
+      {{ resenha?.tipo }}
+    </div>
+
+    <div class="genero">
+      {{ resenha?.genero }}
+    </div>
+
+    <div class="estrelas">
+      <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
+      <span *ngIf="temMeiaEstrela">⯪</span>
+      <span class="vazia"
+            *ngFor="let _ of [].constructor(estrelasVazias)">
+        ★
+      </span>
+    </div>
+
+    <h3>Sinopse</h3>
+    <p class="sinopse">
+      {{ resenha?.descricao }}
+    </p>
+
+    <h3>Resenha</h3>
+    <p class="resenha-texto">
+      {{ resenha?.resenha }}
+    </p>
+
+  </div>
+
+</div>
