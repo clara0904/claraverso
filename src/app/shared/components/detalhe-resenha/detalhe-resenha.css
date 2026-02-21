@@ -1,29 +1,27 @@
 .detalhe-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
 .capa {
-  width: 30%;
+  width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  padding: 40px 0;
 }
 
 .capa img {
-  width: 75%;
+  width: 70%;
+  max-width: 350px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .conteudo {
-  width: 70%;
+  width: 65%;
   padding: 60px;
-  overflow-y: auto;
 }
 
 .titulo {
@@ -69,4 +67,52 @@ h3 {
   margin-top: 30px;
   margin-bottom: 10px;
   color: #2C3E50;
+}
+
+@media (max-width: 900px) {
+
+  .detalhe-container {
+    flex-direction: column;
+  }
+
+  .capa {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .capa img {
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .conteudo {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .capa img {
+    width: 70%;
+  }
+
+  .conteudo {
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .sinopse,
+  .resenha-texto {
+    font-size: 1rem;
+  }
+
 }

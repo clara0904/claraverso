@@ -75,7 +75,7 @@ app-resenha-card {
 
 @media (max-width: 768px) {
   .topo-explorar {
-    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
     gap: 15px;
     font-size: 14px;
