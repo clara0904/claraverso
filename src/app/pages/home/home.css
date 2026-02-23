@@ -4,6 +4,20 @@
 
 section {
   margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
@@ -18,4 +32,23 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 25px;
+}
+
+app-resenha-card {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeCard 0.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+app-resenha-card:nth-child(1) { animation-delay: 0.1s; }
+app-resenha-card:nth-child(2) { animation-delay: 0.2s; }
+app-resenha-card:nth-child(3) { animation-delay: 0.3s; }
+app-resenha-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeCard {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
