@@ -1,0 +1,52 @@
+<div class="form-container">
+  <h2>Nova Resenha</h2>
+    <br>
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+
+    <div class="campo">
+    <label for="titulo">Título *</label>
+    <input id="titulo" type="text" formControlName="titulo" />
+    </div>
+
+    <div class="campo">
+    <label for="tipo">Tipo</label>
+    <select id="tipo" formControlName="tipo">
+        <option value="livro">Livro</option>
+        <option value="filme">Filme</option>
+        <option value="serie">Série</option>
+    </select>
+    </div>
+
+    <div class="campo">
+    <label for="nota">Nota (1 a 5)</label>
+    <input id="nota" type="number" formControlName="nota" min="1" max="5" />
+    </div>
+
+    <div class="campo">
+    <label for="genero">Gênero</label>
+    <input id="genero" type="text" formControlName="genero" />
+    </div>
+    
+    <div class="campo">
+    <label for="descricao">Sinopse</label>
+    <textarea id="descricao" type="text" formControlName="descricao"></textarea>
+    </div>
+
+    <div class="campo">
+    <label for="resenha">Resenha</label>
+    <textarea id="resenha" type="text" formControlName="resenha"></textarea>
+    </div>
+
+    <div class="campo">
+    <label>Imagem da capa</label>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+
+    <img *ngIf="preview" [src]="preview" class="preview-img" />
+
+    <button type="submit" [disabled]="form.invalid">
+      Publicar
+    </button>
+
+  </form>
+</div>

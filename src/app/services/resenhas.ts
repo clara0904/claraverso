@@ -86,4 +86,8 @@ export class ResenhasService {
   getResenhas(): Resenha[] {
     return this.resenhas;
   }
+
+  adicionarResenha(resenha: Resenha) {
+    this.resenhas.push(resenha);
+  }
 }
