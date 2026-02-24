@@ -4,8 +4,13 @@
   <form [formGroup]="form" (ngSubmit)="salvar()">
 
     <div class="campo">
-    <label for="titulo">Título *</label>
-    <input id="titulo" type="text" formControlName="titulo" />
+      <label for="titulo">Título *</label>
+      <input id="titulo" type="text" formControlName="titulo" />
+
+      <small class="erro"
+        *ngIf="form.get('titulo')?.invalid && form.get('titulo')?.touched">
+        Título é obrigatório.
+      </small>
     </div>
 
     <div class="campo">
@@ -18,8 +23,13 @@
     </div>
 
     <div class="campo">
-    <label for="nota">Nota (1 a 5)</label>
-    <input id="nota" type="number" formControlName="nota" min="1" max="5" />
+      <label for="nota">Nota (1 a 5)</label>
+      <input id="nota" type="number" formControlName="nota" min="1" max="5" />
+      
+      <small class="erro"
+        *ngIf="form.get('nota')?.invalid && form.get('nota')?.touched">
+        A nota deve estar entre 1 e 5.
+      </small>
     </div>
 
     <div class="campo">

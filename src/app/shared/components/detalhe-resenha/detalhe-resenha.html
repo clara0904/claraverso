@@ -2,7 +2,9 @@
 <div class="detalhe-container">
 
   <div class="capa">
-    <img [src]="resenha?.imagem" alt="capa">
+    <ng-container *ngIf="resenha as r">
+    <img *ngIf="r.imagem" [src]="r.imagem">
+  </ng-container>
   </div>
 
   <div class="conteudo">

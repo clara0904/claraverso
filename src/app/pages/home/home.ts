@@ -14,17 +14,18 @@ import { Menu } from "../../shared/components/menu/menu";
 })
 export class HomeComponent implements OnInit {
 
+  todas: Resenha[] = [];
   livros: Resenha[] = [];
   filmes: Resenha[] = [];
   series: Resenha[] = [];
 
-  constructor(private resenhaService: ResenhasService) {}
+  constructor(private resenhasService: ResenhasService) {}
 
   ngOnInit(): void {
-    const todas = this.resenhaService.getResenhas();
+    this.todas = this.resenhasService.getResenhas();
 
-    this.livros = todas.filter(r => r.tipo === 'livro');
-    this.filmes = todas.filter(r => r.tipo === 'filme');
-    this.series = todas.filter(r => r.tipo === 'serie');
+  this.livros = this.todas.filter((r: Resenha) => r.tipo === 'livro');
+  this.filmes = this.todas.filter((r: Resenha) => r.tipo === 'filme');
+  this.series = this.todas.filter((r: Resenha) => r.tipo === 'serie');
   }
 }

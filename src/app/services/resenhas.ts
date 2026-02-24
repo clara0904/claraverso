@@ -6,9 +6,9 @@ import { Resenha } from '../models/resenha.model';
 })
 export class ResenhasService {
 
-  buscarPorId(id: number): Resenha | undefined {
-    return this.resenhas.find(r => r.id === id);
-  }
+  private chave = 'resenhas';
+
+  
 
   private resenhas: Resenha[] = [
     {
@@ -83,11 +83,32 @@ export class ResenhasService {
     },
   ];
 
+  
   getResenhas(): Resenha[] {
-    return this.resenhas;
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const dados = localStorage.getItem('resenhas');
+      return dados ? JSON.parse(dados) : [];
+    }
+    return [];
   }
 
-  adicionarResenha(resenha: Resenha) {
-    this.resenhas.push(resenha);
+  adicionarResenha(nova: Resenha) {
+    const resenhas = this.getResenhas();
+    resenhas.push(nova);
+    this.salvarResenhas(resenhas);
   }
+
+  buscarPorId(id: number) {
+    if (typeof window !== 'undefined') {
+      const resenhas = this.getResenhas();
+      return resenhas.find(r => r.id === id);
+    }
+    return undefined;
+  }
+
+  salvarResenhas(resenhas: any[]) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('resenhas', JSON.stringify(resenhas));
+    }
+  } 
 }

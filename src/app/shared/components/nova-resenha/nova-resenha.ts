@@ -28,12 +28,14 @@ export class NovaResenha {
       genero: [''],
       descricao: [''],
       resenha: [''],
-      imagemUrl: ['']
+      imagem: ['', Validators.required]
     });
   }
 
   salvar() {
     if (this.form.invalid) return;
+
+    console.log(this.form.value);
 
     const nova = {
       id: Date.now(),
@@ -44,22 +46,26 @@ export class NovaResenha {
     this.router.navigate(['/']);
   }
 
+
   preview: string | null = null;
 
   onFileSelected(event: any) {
-    const file = event.target.files[0];
+  const file = event.target.files[0];
 
-    if (!file) return;
-
+  if (file) {
     const reader = new FileReader();
 
     reader.onload = () => {
-      this.preview = reader.result as string;
+      const base64 = reader.result as string;
+
+      console.log('Imagem convertida:', base64);
+
       this.form.patchValue({
-        imagemUrl: this.preview
+        imagem: base64
       });
     };
 
     reader.readAsDataURL(file);
   }
+}
 }

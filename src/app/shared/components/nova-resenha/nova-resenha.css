@@ -77,3 +77,14 @@ button:disabled {
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+
+.erro {
+  color: #e74c3c;
+  font-size: 12px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c;
+}

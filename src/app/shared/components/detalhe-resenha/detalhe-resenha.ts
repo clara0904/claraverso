@@ -14,13 +14,13 @@ import { CommonModule } from '@angular/common';
 })
 export class DetalheResenha {
   id!: number;
-  resenha!: Resenha | undefined;
+  resenha?: Resenha;
   estrelasCheias = 0;
   estrelasVazias = 0;
   temMeiaEstrela = false;
 
   constructor(private route: ActivatedRoute, private resenhasService: ResenhasService) {}
-
+  
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
 
