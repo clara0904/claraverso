@@ -106,14 +106,17 @@ app-resenha-card {
     font-size: 14px;
   }
 
+  .topo-explorar h2 {
+    white-space: nowrap;
+  }
+  
   .botoes button {
-    padding: 5px 9px;
-    font-size: 10px;
+    padding: 8px 10px;
+    font-size: 12px;
   }
 
   .botoes {
     flex-wrap: nowrap;
-    overflow-x: auto; 
     gap: 5px;
   }
 
