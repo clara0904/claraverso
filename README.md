@@ -28,11 +28,20 @@ A aplicação permite visualizar uma lista de resenhas e acessar uma página de 
 
 ## Preview
 
-### Página Inicial
-![Página Inicial](public/assets-readme/home.png)
+### 💻 Desktop
 
-### Página Explorar
-![Página Explorar](public/assets-readme/explorar.png)
+<div align="center">
+  <img src="public/assets-readme/home.png" width="33%" />
+  <img src="public/assets-readme/explorar.png" width="33%" />
+  <img src="public/assets-readme/detalhes.png" width="33%" />
+</div>
 
-### Página de Detalhes
-![Página de Detalhes](public/assets-readme/detalhes.png)
+---
+
+### 📱 Mobile
+
+<div align="center">
+  <img src="public/assets-readme/mobile-home.jpeg" width="18%" />
+  <img src="public/assets-readme/mobile-explorar.jpeg" width="18%" />
+  <img src="public/assets-readme/mobile-detahes.jpeg" width="18%" />
+</div>
