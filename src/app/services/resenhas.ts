@@ -83,19 +83,17 @@ export class ResenhasService {
     },
   ];
 
+  constructor() {
+    this.carregarResenhas();
+  }
   
   getResenhas(): Resenha[] {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const dados = localStorage.getItem('resenhas');
-      return dados ? JSON.parse(dados) : [];
-    }
-    return [];
+    return [...this.resenhas];
   }
 
-  adicionarResenha(nova: Resenha) {
-    const resenhas = this.getResenhas();
-    resenhas.push(nova);
-    this.salvarResenhas(resenhas);
+  adicionarResenha(resenha: Resenha) {
+    this.resenhas.push(resenha);
+    this.salvarResenhas();
   }
 
   buscarPorId(id: number) {
@@ -106,9 +104,26 @@ export class ResenhasService {
     return undefined;
   }
 
-  salvarResenhas(resenhas: any[]) {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('resenhas', JSON.stringify(resenhas));
+  removerResenha(id: number) {
+    this.resenhas = this.resenhas.filter(r => r.id !== id);
+    this.salvarResenhas();
+  }
+
+  private salvarResenhas() {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('resenhas', JSON.stringify(this.resenhas));
     }
-  } 
+  }
+
+  private carregarResenhas() {
+    if (typeof window !== 'undefined') {
+      const data = localStorage.getItem('resenhas');
+      this.resenhas = data ? JSON.parse(data) : [];
+    }
+  }
+
+  listarResenhas() {
+    return this.resenhas;
+  }
+
 }

@@ -3,8 +3,8 @@
 
   <div class="capa">
     <ng-container *ngIf="resenha as r">
-    <img *ngIf="r.imagem" [src]="r.imagem">
-  </ng-container>
+      <img *ngIf="r.imagem" [src]="r.imagem">
+    </ng-container>
   </div>
 
   <div class="conteudo">
@@ -13,33 +13,43 @@
       {{ resenha?.titulo }}
     </h1>
 
-    <div class="tipo">
-      {{ resenha?.tipo }}
-    </div>
-
-    <div class="genero">
-      {{ resenha?.genero }}
-    </div>
+    <div class="tipo">{{ resenha?.tipo }}</div>
+    <div class="genero">{{ resenha?.genero }}</div>
 
     <div class="estrelas">
       <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
       <span *ngIf="temMeiaEstrela">⯪</span>
-      <span class="vazia"
-            *ngFor="let _ of [].constructor(estrelasVazias)">
-        ★
-      </span>
+      <span class="vazia" *ngFor="let _ of [].constructor(estrelasVazias)">★</span>
     </div>
 
     <h3>Sinopse</h3>
-    <p class="sinopse">
-      {{ resenha?.descricao }}
-    </p>
+    <p class="sinopse">{{ resenha?.descricao }}</p>
 
     <h3>Resenha</h3>
-    <p class="resenha-texto">
-      {{ resenha?.resenha }}
-    </p>
+    <p class="resenha-texto">{{ resenha?.resenha }}</p>
 
+    <div class="acoes">
+      <button type="button" (click)="abrirConfirm()">Excluir resenha</button>
+    </div>
+
+  </div>
+
+  <div class="popup" *ngIf="mostrarConfirm">
+    <div class="popup-conteudo">
+      <ng-container *ngIf="!mensagem; else mensagemExclusao">
+        <h3>Confirmação</h3>
+        <p>Você quer realmente apagar "{{ resenha?.titulo }}"?</p>
+        <div class="botoes">
+          <button (click)="confirmarExclusao()">Sim</button>
+          <button (click)="cancelarExclusao()">Não</button>
+        </div>
+      </ng-container>
+
+      <ng-template #mensagemExclusao>
+        <h3>Sucesso!</h3>
+        <p>{{ mensagem }}</p>
+      </ng-template>
+    </div>
   </div>
 
 </div>

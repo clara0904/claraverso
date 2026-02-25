@@ -39,18 +39,18 @@ export class Explorar {
   }
 
   get resenhasFiltradas() {
-  return this.resenhas.filter(resenha => {
+    return this.resenhas.filter(resenha => {
 
-    const correspondeTipo =
-      !this.tipoSelecionado ||
-      resenha.tipo === this.tipoSelecionado;
+      const correspondeTipo =
+        !this.tipoSelecionado ||
+        resenha.tipo === this.tipoSelecionado;
 
-    const correspondeBusca =
-      resenha.titulo
-        .toLowerCase()
-        .includes(this.busca.toLowerCase());
+      const correspondeBusca =
+        resenha.titulo
+          .toLowerCase()
+          .includes(this.busca.toLowerCase());
 
-    return correspondeTipo && correspondeBusca;
-  });
-}
+      return correspondeTipo && correspondeBusca;
+    });
+  }
 }

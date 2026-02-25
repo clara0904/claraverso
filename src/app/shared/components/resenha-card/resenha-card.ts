@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 export class ResenhaCardComponent {
 
   @Input() resenha!: Resenha;
-  
+
   get estrelasCheias(): number {
   return Math.floor(this.resenha.nota);
   }
@@ -25,6 +25,4 @@ export class ResenhaCardComponent {
   get estrelasVazias(): number {
     return 5 - this.estrelasCheias - (this.temMeiaEstrela ? 1 : 0);
   }
-
 }
-

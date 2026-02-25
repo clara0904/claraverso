@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarExplorar } from "../navbar-explorar/navbar-explorar";
 import { ResenhasService } from '../../../services/resenhas';
 import { Resenha } from '../../../models/resenha.model';
@@ -19,7 +19,7 @@ export class DetalheResenha {
   estrelasVazias = 0;
   temMeiaEstrela = false;
 
-  constructor(private route: ActivatedRoute, private resenhasService: ResenhasService) {}
+  constructor(private route: ActivatedRoute, private resenhasService: ResenhasService, private router: Router) {}
   
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -35,5 +35,30 @@ export class DetalheResenha {
       this.temMeiaEstrela = nota % 1 >= 0.5;
       this.estrelasVazias = 5 - this.estrelasCheias - (this.temMeiaEstrela ? 1 : 0);
     }
+  }
+
+  mostrarConfirm = false;
+  mensagem: string | null = null;
+
+  abrirConfirm() {
+    this.mostrarConfirm = true;
+  }
+
+  cancelarExclusao() {
+    this.mostrarConfirm = false;
+  }
+
+  confirmarExclusao() {
+    if (!this.resenha) return;
+
+    this.resenhasService.removerResenha(this.resenha.id);
+
+    this.mensagem = `Resenha "${this.resenha.titulo}" apagada com sucesso!`;
+
+    setTimeout(() => {
+      this.router.navigate(['/']).then(() => {
+        window.location.reload(); 
+      });
+    }, 1500);
   }
 }
