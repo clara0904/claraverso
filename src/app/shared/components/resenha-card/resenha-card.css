@@ -8,6 +8,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  max-width: none;
+  height: 390px;
   transition: transform 0.2s ease;
 }
 
@@ -28,13 +31,12 @@
   font-size: 18px;
   margin: 15px;
   color: #2C3E50;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.card p {
-  margin: 0 15px 10px 15px;
-  font-size: 14px;
-  color: #555;
-}
 
 .card p:last-child {
   margin-bottom: 15px;
@@ -58,8 +60,9 @@
 }
 
 .estrelas {
-  margin-bottom: 10px;
+  margin-top: auto;
   margin-left: 15px;
+  margin-bottom: 15px;
   font-size: 18px;
 }
 
@@ -85,3 +88,32 @@
   margin-bottom: 10px;
 
 }
+
+@media (max-width: 800px) {
+  .card img {
+    height: 120px;
+  }
+
+  .card {
+    height: 215px; 
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .preview {
+    display: none !important;
+  }
+
+  .estrelas {
+    font-size: 16px;
+  }
+
+  .tag-genero {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+}
+

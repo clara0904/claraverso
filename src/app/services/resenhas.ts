@@ -10,7 +10,8 @@ export class ResenhasService {
 
   
 
-  private resenhas: Resenha[] = [
+  private resenhas: Resenha[] = []
+  private resenhasPadrao: Resenha[] = [
     {
       id: 1,
       titulo: 'Melhor do que nos filmes',
@@ -116,9 +117,16 @@ export class ResenhasService {
   }
 
   private carregarResenhas() {
-    if (typeof window !== 'undefined') {
-      const data = localStorage.getItem('resenhas');
-      this.resenhas = data ? JSON.parse(data) : [];
+    if (typeof window === 'undefined') return;
+
+    const data = localStorage.getItem('resenhas');
+    const resenhasSalvas = data ? JSON.parse(data) : null;
+
+    if (!resenhasSalvas || resenhasSalvas.length === 0) {
+      this.resenhas = [...this.resenhasPadrao];
+      this.salvarResenhas();
+    } else {
+      this.resenhas = resenhasSalvas;
     }
   }
 
