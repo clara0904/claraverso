@@ -91,11 +91,11 @@
 
 @media (max-width: 800px) {
   .card img {
-    height: 120px;
+    height: 150px;
   }
 
   .card {
-    height: 215px; 
+    height: 250px; 
   }
 
   .card h3 {

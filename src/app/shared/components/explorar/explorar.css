@@ -16,14 +16,14 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 25px;
   justify-content: start;
 }
 
 app-resenha-card {
   flex: 1 1 250px;
-  max-width: 300px;
+  width: 100%;
 }
 
 .filtros {
