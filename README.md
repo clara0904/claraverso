@@ -43,5 +43,5 @@ A aplicação permite visualizar uma lista de resenhas e acessar uma página de 
 <div align="center">
   <img src="public/assets-readme/mobile-home.jpeg" width="18%" />
   <img src="public/assets-readme/mobile-explorar.jpeg" width="18%" />
-  <img src="public/assets-readme/mobile-detahes.jpeg" width="18%" />
+  <img src="public/assets-readme/mobile-detalhes.jpeg" width="18%" />
 </div>
