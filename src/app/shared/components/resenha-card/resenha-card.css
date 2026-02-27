@@ -64,15 +64,32 @@
   margin-left: 15px;
   margin-bottom: 15px;
   font-size: 18px;
+  position: relative;
 }
 
 .estrelas span {
-  color: #F06292; 
+  color: #F06292;
   margin-right: 3px;
 }
 
+/* estrela vazia */
 .estrelas .vazia {
   color: #ddd;
+}
+
+/* meia estrela */
+.estrelas .meia {
+  position: relative;
+  color: #ddd;
+}
+
+.estrelas .meia::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #F06292;
 }
 
 .tag-genero {

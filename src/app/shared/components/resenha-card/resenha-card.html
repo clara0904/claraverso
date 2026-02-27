@@ -12,13 +12,16 @@
     </h3>
 
     <div class="estrelas">
-        <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
-        <span *ngIf="temMeiaEstrela">⯪</span>
-        <span class="vazia"
-                *ngFor="let _ of [].constructor(estrelasVazias)">
-            ★
-        </span>
-    </div>
+    <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
+
+    <span *ngIf="temMeiaEstrela" class="meia">★</span>
+
+    <span 
+      class="vazia"
+      *ngFor="let _ of [].constructor(estrelasVazias)">
+      ★
+    </span>
+  </div>
 
     <p class="preview">{{ resenha.resenha }}</p>
   </div>
