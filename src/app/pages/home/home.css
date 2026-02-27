@@ -57,22 +57,46 @@ app-resenha-card:nth-child(4) { animation-delay: 0.4s; }
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .container {
+    padding: 35px 70px;
+  }
+
 }
 
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .container {
+    padding: 30px 60px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
 }
 
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: repeat(2, 1fr); 
   }
+
+  .container {
+    padding: 13px 40px;
+  }
+
 }
 
 @media (max-width: 360px) {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .container {
+    padding: 10px 40px;
+  }
+
 }

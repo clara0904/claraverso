@@ -78,11 +78,12 @@ hr {
 @media (max-width: 768px) {
 
   .logo {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .navbar {
     position: relative;
+    padding: 10px 20px;
   }
 
   hr {
@@ -94,6 +95,11 @@ hr {
     position: absolute;
     right: 20px;
     top: 25px;
+    transform: translateY(-50%);
+  }
+
+  .hamburger.active {
+    transform: rotate(90deg);
   }
 
   .links {
