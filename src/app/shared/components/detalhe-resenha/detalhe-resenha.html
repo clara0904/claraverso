@@ -18,8 +18,14 @@
 
     <div class="estrelas">
       <span *ngFor="let _ of [].constructor(estrelasCheias)">★</span>
-      <span *ngIf="temMeiaEstrela">⯪</span>
-      <span class="vazia" *ngFor="let _ of [].constructor(estrelasVazias)">★</span>
+
+      <span *ngIf="temMeiaEstrela" class="meia">★</span>
+
+      <span 
+        class="vazia"
+        *ngFor="let _ of [].constructor(estrelasVazias)">
+        ★
+      </span>
     </div>
 
     <h3>Sinopse</h3>

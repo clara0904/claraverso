@@ -84,13 +84,32 @@
 }
 
 .estrelas {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
+  margin-top: auto;
+  font-size: 18px;
+  position: relative;
+}
+
+.estrelas span {
   color: #F06292;
+  margin-right: 3px;
 }
 
 .estrelas .vazia {
-  color: #ccc;
+  color: #ddd;
+}
+
+.estrelas .meia {
+  position: relative;
+  color: #ddd;
+}
+
+.estrelas .meia::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #F06292;
 }
 
 .sinopse,

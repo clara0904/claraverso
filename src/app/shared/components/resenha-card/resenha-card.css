@@ -72,12 +72,10 @@
   margin-right: 3px;
 }
 
-/* estrela vazia */
 .estrelas .vazia {
   color: #ddd;
 }
 
-/* meia estrela */
 .estrelas .meia {
   position: relative;
   color: #ddd;
